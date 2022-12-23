@@ -37,7 +37,7 @@ app.get("/:shortUrl", async (req, res) => {
 });
 
 app.post("/delete/:id", async (req, res) => {
-  await ShortUrl.findByIdAndDelete(id);
+  await ShortUrl.findByIdAndDelete(req.params.id);
   res.redirect("/");
 });
 
